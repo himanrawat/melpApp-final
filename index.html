@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Admin Dashboard</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<!-- Overlay -->
+		<div class="overlay" id="overlay"></div>
+
+		<!-- Sidebar -->
+		<aside class="sidebar" id="sidebar">
+			<div class="sidebar-header">
+				<button class="toggle-button" id="toggleButton">
+					<span class="nav-icon">≡</span>
+				</button>
+				<button class="mobile-close-button" id="mobileCloseButton">×</button>
+				<div class="logo-container">
+					<div class="logo" id="logo">🏫</div>
+					<div class="school-name" id="schoolName">School Name</div>
+				</div>
+			</div>
+			<nav class="nav-menu">
+				<a href="/" class="nav-item">
+					<span class="nav-icon">▶</span>
+					<span class="nav-title">Dashboard</span>
+				</a>
+				<a href="/Employees" class="nav-item">
+					<span class="nav-icon">▶</span>
+					<span class="nav-title">Employees</span>
+				</a>
+				<a href="/Students" class="nav-item">
+					<span class="nav-icon">▶</span>
+					<span class="nav-title">Students</span>
+				</a>
+				<a href="/Finance" class="nav-item">
+					<span class="nav-icon">▶</span>
+					<span class="nav-title">Finance</span>
+				</a>
+				<a href="/Department" class="nav-item">
+					<span class="nav-icon">▶</span>
+					<span class="nav-title">Department</span>
+				</a>
+				<a href="/Attendance" class="nav-item">
+					<span class="nav-icon">▶</span>
+					<span class="nav-title">Attendance</span>
+				</a>
+				<a href="/Event" class="nav-item">
+					<span class="nav-icon">▶</span>
+					<span class="nav-title">Event Management</span>
+				</a>
+				<a href="/Support" class="nav-item">
+					<span class="nav-icon">▶</span>
+					<span class="nav-title">Support</span>
+				</a>
+			</nav>
+		</aside>
+
+		<!-- Dashboard Content -->
+		<main class="dashboard" id="dashboard">
+			<div class="top-bar">
+				<button class="mobile-menu-button" id="mobileMenuButton">
+					<span>≡</span>
+				</button>
+				<h1>Dashboard Overview</h1>
+			</div>
+
+			<div class="stats-grid">
+				<div class="stat-card">
+					<div class="stat-title">Total Students</div>
+					<div class="stat-value">2,543</div>
+					<div class="stat-change">↑ 12% from last month</div>
+				</div>
+				<div class="stat-card">
+					<div class="stat-title">Total Staff</div>
+					<div class="stat-value">145</div>
+					<div class="stat-change">↑ 4% from last month</div>
+				</div>
+				<div class="stat-card">
+					<div class="stat-title">Departments</div>
+					<div class="stat-value">12</div>
+					<div class="stat-change">No change</div>
+				</div>
+				<div class="stat-card">
+					<div class="stat-title">Monthly Revenue</div>
+					<div class="stat-value">$234.5K</div>
+					<div class="stat-change">↑ 8% from last month</div>
+				</div>
+			</div>
+		</main>
+		<script src="script.js"></script>
+	</body>
+</html>
