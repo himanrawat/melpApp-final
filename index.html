@@ -4,57 +4,124 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Admin Dashboard</title>
+
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
 		<!-- Overlay -->
 		<div class="overlay" id="overlay"></div>
+		<div class="topbar">
+			<div class="logo">
+				<img src="./assets/logo.png" alt="logo" />
+				<h1>Dashboard</h1>
+			</div>
+		</div>
 
 		<!-- Sidebar -->
 		<aside class="sidebar" id="sidebar">
 			<div class="sidebar-header">
-				<button class="toggle-button" id="toggleButton">
-					<span class="nav-icon">≡</span>
+				<button class="toggle-button active" id="toggleButton">
+					<img src="./assets/arrow.jpg" alt="menu" />
 				</button>
 				<button class="mobile-close-button" id="mobileCloseButton">×</button>
-				<div class="logo-container">
-					<div class="logo" id="logo">🏫</div>
-					<div class="school-name" id="schoolName">School Name</div>
-				</div>
 			</div>
 			<nav class="nav-menu">
-				<a href="/" class="nav-item">
-					<span class="nav-icon">▶</span>
-					<span class="nav-title">Dashboard</span>
-				</a>
-				<a href="/Employees" class="nav-item">
-					<span class="nav-icon">▶</span>
-					<span class="nav-title">Employees</span>
-				</a>
-				<a href="/Students" class="nav-item">
-					<span class="nav-icon">▶</span>
-					<span class="nav-title">Students</span>
-				</a>
-				<a href="/Finance" class="nav-item">
-					<span class="nav-icon">▶</span>
-					<span class="nav-title">Finance</span>
-				</a>
-				<a href="/Department" class="nav-item">
-					<span class="nav-icon">▶</span>
-					<span class="nav-title">Department</span>
-				</a>
-				<a href="/Attendance" class="nav-item">
-					<span class="nav-icon">▶</span>
-					<span class="nav-title">Attendance</span>
-				</a>
-				<a href="/Event" class="nav-item">
-					<span class="nav-icon">▶</span>
-					<span class="nav-title">Event Management</span>
-				</a>
-				<a href="/Support" class="nav-item">
-					<span class="nav-icon">▶</span>
-					<span class="nav-title">Support</span>
-				</a>
+				<button class="nav-item">
+					<span class="icon-container">
+						<span class="nav-icon">
+							<img src="./assets/dashboard.png" alt="dashboard" />
+						</span>
+						<span class="nav-title">Dashboard</span>
+					</span>
+				</button>
+				<div class="nav-item-submenu">
+					<button class="nav-item">
+						<span class="icon-container">
+							<span class="nav-icon">
+								<img src="./assets/Recents.png" alt="Recents" />
+							</span>
+							<span class="nav-title">Recents</span>
+						</span>
+						<div class="badges">
+							<p>1</p>
+						</div>
+						<img src="./assets/expand.png" alt="arrow" />
+					</button>
+					<div class="submenu-container hidden" id="submenuContainer">
+						<div class="line"></div>
+						<ul class="sub-menu">
+							<li>Calls</li>
+							<li>Messages</li>
+							<li>Topics</li>
+							<li>Groups</li>
+							<li class="sub-menu-active">
+								<span> Meetings </span>
+								<span class="badges">
+									<p>99</p>
+								</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<button class="nav-item">
+					<span class="icon-container">
+						<span class="nav-icon">
+							<img src="./assets/contacts.png" alt="contacts" />
+						</span>
+						<span class="nav-title">Contacts</span>
+					</span>
+				</button>
+				<button class="nav-item">
+					<span class="icon-container">
+						<span class="nav-icon">
+							<img src="./assets/teams.png" alt="teams" />
+						</span>
+						<span class="nav-title">Teams</span>
+					</span>
+				</button>
+				<button class="nav-item">
+					<span class="icon-container">
+						<span class="nav-icon">
+							<img src="./assets/groups.png" alt="Groups" />
+						</span>
+						<span class="nav-title">Groups</span>
+					</span>
+				</button>
+				<button class="nav-item">
+					<span class="icon-container">
+						<span class="nav-icon">
+							<img src="./assets/calendar.png" alt="Calendar" />
+						</span>
+						<span class="nav-title">Calendar</span>
+					</span>
+					<img src="./assets/expand.png" alt="More" />
+				</button>
+				<button class="nav-item">
+					<span class="icon-container">
+						<span class="nav-icon">
+							<img src="./assets/network.png" alt="Network" />
+						</span>
+						<span class="nav-title">Network</span>
+					</span>
+					<img src="./assets/expand.png" alt="More" />
+				</button>
+				<button class="nav-item">
+					<span class="icon-container">
+						<span class="nav-icon">
+							<img src="./assets/drive.png" alt="melp drive" />
+						</span>
+						<span class="nav-title">Melp Drive</span>
+					</span>
+				</button>
+				<button class="nav-item">
+					<span class="icon-container">
+						<span class="nav-icon">
+							<img src="./assets/more.png" alt="" />
+						</span>
+						<span class="nav-title">More</span>
+					</span>
+					<img src="./assets/expand.png" alt="More" />
+				</button>
 			</nav>
 		</aside>
 
