@@ -34,8 +34,11 @@ body {
 	justify-content: space-between;
 	background-color: #fff;
 	padding: 1rem 2rem;
-	height: 75px;
+	min-height: 75px;
+	max-height: fit-content;
 	width: 100%;
+	flex-wrap: wrap;
+	gap: 1rem;
 }
 
 .logo-container {
@@ -65,6 +68,68 @@ body {
 	text-underline-position: from-font;
 	text-decoration-skip-ink: none;
 	text-transform: uppercase;
+}
+
+.search-bar {
+	width: 100%;
+	max-width: 490px;
+	height: 41px;
+	background-color: rgba(115, 112, 112, 0.1);
+	display: flex;
+	align-items: center;
+	padding-left: 1rem;
+	border-radius: 2px;
+	gap: 0.5rem;
+}
+
+.search-bar input {
+	background-color: transparent;
+	border: none;
+	color: #737070;
+	width: 100%;
+	height: 100%;
+}
+
+.profile-section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 26px;
+}
+
+.call-button {
+	width: 134px;
+	height: 35px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 10px;
+	border: none;
+	padding: 8px 13px;
+	border-radius: 2px;
+	background-color: #9c9696;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.pin-button {
+	height: 35px;
+	width: 35px;
+	cursor: pointer;
+	background-color: transparent;
+	border: none;
+}
+
+.avatar {
+	width: 42px;
+	height: 42px;
+	border-radius: 3px;
+	cursor: pointer;
 }
 
 /* Sidebar Styles */
@@ -281,22 +346,6 @@ body {
 .dashboard.expanded {
 	margin-left: 256px;
 	/* width: calc(100% - 256px); */
-}
-
-.top-bar {
-	display: flex;
-	align-items: center;
-	gap: 1rem;
-	background-color: white;
-	padding: 1.5rem;
-	border-radius: 0.5rem;
-	margin-bottom: 2rem;
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.top-bar h1 {
-	color: #111827;
-	font-size: 1.5rem;
 }
 
 .mobile-menu-button {
