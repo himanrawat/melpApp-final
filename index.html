@@ -41,22 +41,22 @@
 		<!-- Sidebar -->
 		<aside class="sidebar" id="sidebar">
 			<div class="sidebar-header">
-				<button class="toggle-button active" id="toggleButton">
+				<button class="toggle-button img-rotate" id="toggleButton">
 					<img src="./assets/arrow.jpg" alt="menu" />
 				</button>
 				<button class="mobile-close-button" id="mobileCloseButton">×</button>
 			</div>
 			<nav class="nav-menu">
-				<button class="nav-item">
+				<a href="/" class="nav-item active">
 					<span class="icon-container">
 						<span class="nav-icon">
 							<img src="./assets/dashboard.png" alt="dashboard" />
 						</span>
 						<span class="nav-title">Dashboard</span>
 					</span>
-				</button>
+				</a>
 				<div class="nav-item-submenu">
-					<button class="nav-item">
+					<a class="nav-item">
 						<span class="icon-container">
 							<span class="nav-icon">
 								<img src="./assets/Recents.png" alt="Recents" />
@@ -67,19 +67,29 @@
 							<p>1</p>
 						</div>
 						<img src="./assets/expand.png" alt="arrow" />
-					</button>
+					</a>
 					<div class="submenu-container hidden" id="submenuContainer">
 						<div class="line"></div>
 						<ul class="sub-menu">
-							<li>Calls</li>
-							<li>Messages</li>
-							<li>Topics</li>
-							<li>Groups</li>
-							<li class="sub-menu-active">
-								<span> Meetings </span>
-								<span class="badges">
-									<p>99</p>
-								</span>
+							<li>
+								<a href="#"> Calls </a>
+							</li>
+							<li>
+								<a href="#"> Messages </a>
+							</li>
+							<li>
+								<a href="#"> Topics </a>
+							</li>
+							<li>
+								<a href="#"> Groups </a>
+							</li>
+							<li>
+								<a href="#" class="sub-menu-active">
+									<span> Meetings </span>
+									<span class="badges">
+										<p>99</p>
+									</span>
+								</a>
 							</li>
 						</ul>
 					</div>

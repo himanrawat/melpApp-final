@@ -170,7 +170,7 @@ body {
 	left: 20px;
 }
 
-.active img {
+.img-rotate img {
 	transform: rotate(180deg);
 }
 
@@ -192,6 +192,10 @@ body {
 	color: #4b5563;
 }
 
+.active {
+	background-color: #f2f2f2 !important;
+}
+
 .nav-menu {
 	padding: 1rem;
 	display: flex;
@@ -210,7 +214,7 @@ body {
 	width: 100%;
 	height: 44px;
 	min-width: 44px;
-	padding: 10px 12px 10px 12px;
+	padding: 10px 12px;
 	gap: 12px;
 	border-radius: 8px;
 	cursor: pointer;
@@ -220,6 +224,7 @@ body {
 	letter-spacing: 0.05em;
 	text-align: left;
 	text-transform: uppercase;
+	text-decoration: none;
 }
 
 .icon-container {
@@ -300,7 +305,7 @@ body {
 	height: 32px;
 	padding: 8px 12px;
 	gap: 12px;
-	border-radius: 8px 0px 0px 0px;
+	border-radius: 8px;
 	cursor: pointer;
 	font-size: 10px;
 	font-weight: 600;
@@ -314,6 +319,18 @@ body {
 
 .sub-menu li:hover {
 	background-color: #f2f2f2;
+}
+
+.sub-menu li a {
+	color: #222020;
+	text-decoration: none;
+}
+
+.sub-menu-active {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
 }
 
 .nav-icon {

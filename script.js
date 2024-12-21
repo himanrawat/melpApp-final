@@ -5,38 +5,39 @@ const mobileMenuButton = document.getElementById("mobileMenuButton");
 const mobileCloseButton = document.getElementById("mobileCloseButton");
 const overlay = document.getElementById("overlay");
 const logo = document.getElementById("logo");
-// Get all nav items including both regular and submenu items
-const allNavItems = document.querySelectorAll(".nav-item");
+
 const navItemsWithSubmenu = document.querySelectorAll(".nav-item-submenu .nav-item");
 const subMenu = document.getElementById("submenuContainer");
 const subMenuItems = document.querySelectorAll(".sub-menu li");
 
 let isSidebarExpanded = false;
-let activeNavItem = null;
+let activeDropdownItem = null;
 let activeSubMenuItem = null;
 
-// Function to remove active state from all items
-function removeActiveState() {
-    allNavItems.forEach(item => {
-        item.style.backgroundColor = '';
-    });
-    subMenuItems.forEach(item => {
+// Function to remove active state from dropdown items
+function removeDropdownActiveState() {
+    navItemsWithSubmenu.forEach(item => {
         item.style.backgroundColor = '';
     });
 }
 
-// Add click event for all nav items
-allNavItems.forEach(item => {
+// Add click event for nav items with dropdowns
+navItemsWithSubmenu.forEach(item => {
     item.addEventListener("click", (e) => {
-        removeActiveState();
-        item.style.backgroundColor = '#F6F6F6';
-        activeNavItem = item;
-        
-        // If this item has a submenu
-        const parentSubmenu = item.closest('.nav-item-submenu');
-        if (parentSubmenu) {
+        // If clicking the same dropdown item that's already active
+        if (activeDropdownItem === item) {
+            removeDropdownActiveState();
+            activeDropdownItem = null;
             if (sidebar.classList.contains("expanded")) {
-                subMenu.classList.toggle("hidden");
+                subMenu.classList.add("hidden");
+            }
+        } else {
+            removeDropdownActiveState();
+            item.style.backgroundColor = '#F6F6F6';
+            activeDropdownItem = item;
+            
+            if (sidebar.classList.contains("expanded")) {
+                subMenu.classList.remove("hidden");
             } else {
                 subMenu.classList.add("hidden");
             }
@@ -58,9 +59,9 @@ subMenuItems.forEach(item => {
         item.style.backgroundColor = '#F6F6F6';
         activeSubMenuItem = item;
         
-        // Keep parent nav item active
-        if (activeNavItem && activeNavItem.closest('.nav-item-submenu')) {
-            activeNavItem.style.backgroundColor = '#F6F6F6';
+        // Keep parent dropdown item active
+        if (activeDropdownItem) {
+            activeDropdownItem.style.backgroundColor = '#F6F6F6';
         }
     });
 });
@@ -71,7 +72,7 @@ toggleButton.addEventListener("click", () => {
         isSidebarExpanded = !isSidebarExpanded;
         sidebar.classList.toggle("expanded");
         dashboard.classList.toggle("expanded");
-        toggleButton.classList.toggle("active");
+        toggleButton.classList.toggle("img-rotate");
         
         // If sidebar is collapsed, hide submenu
         if (!isSidebarExpanded) {
@@ -93,6 +94,8 @@ function closeMobileMenu() {
     overlay.classList.remove("show");
     document.body.style.overflow = "";
     subMenu.classList.add("hidden");
+    removeDropdownActiveState();
+    activeDropdownItem = null;
 }
 
 mobileCloseButton.addEventListener("click", closeMobileMenu);
@@ -106,6 +109,8 @@ function updateSidebarState() {
         document.body.style.overflow = "";
         isSidebarExpanded = false;
         subMenu.classList.add("hidden");
+        removeDropdownActiveState();
+        activeDropdownItem = null;
     } else {
         overlay.classList.remove("show");
         document.body.style.overflow = "";
