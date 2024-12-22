@@ -30,12 +30,9 @@ body {
 	background-color: #fff;
 	padding: 1rem 2rem;
 	min-height: 75px;
-	max-height: fit-content;
 	width: 100%;
 	flex-wrap: wrap;
 	gap: 1rem;
-	position: fixed;
-	top: 0;
 	z-index: 30;
 }
 
@@ -118,9 +115,8 @@ body {
 
 .sidebar {
 	position: fixed;
-	top: 75px;
 	left: 0;
-	height: calc(100vh - 75px);
+	height: 100vh;
 	background: #fff;
 	color: #e5e5e5;
 	overflow: hidden;
@@ -293,10 +289,7 @@ body {
 
 .dashboard {
 	margin-left: 86px;
-	padding-left: 1rem;
 	transition: margin-left 0.2s ease-in-out;
-	min-height: 100vh;
-	margin-top: 75px;
 }
 
 .dashboard.expanded {
@@ -311,7 +304,170 @@ body {
 
 .content-container {
 	width: 100%;
-	background-color: coral;
+	padding: 2rem;
+}
+
+.card-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 154px);
+	margin-top: 2rem;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+.card {
+	width: 154px;
+	height: 187px;
+	gap: 8px;
+	border-radius: 4px;
+	background-color: #ffffff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.card-content h6 {
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 20px;
+	letter-spacing: 0.6000000238418579px;
+	text-align: center;
+}
+
+.card-content p {
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 20px;
+	letter-spacing: 0.6000000238418579px;
+	text-align: center;
+}
+
+.card-footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 122px;
+	height: 30px;
+}
+
+.missed-activity-details {
+	margin-top: 2rem;
+}
+
+.missed-activity-heading {
+	font-size: 19px;
+	font-weight: 600;
+	line-height: 23.16px;
+	letter-spacing: 0.6000000238418579px;
+	margin-bottom: 1rem;
+}
+
+.message-container {
+	width: 100%;
+	background-color: #ffffff;
+	padding: 0.5rem;
+}
+
+.message {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 2rem;
+	border-bottom: 1px solid #f2f2f2;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+.message-content-container {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.message-content-container div {
+	gap: 6px;
+}
+
+.message-heading {
+	display: flex;
+	gap: 4px;
+	flex-wrap: wrap;
+}
+
+.message-heading h6 {
+	font-size: 17px;
+	font-weight: 600;
+	line-height: 20.72px;
+	letter-spacing: 0.6000000238418579px;
+	color: #222020;
+}
+
+.message-heading p {
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 20px;
+	letter-spacing: 0.6000000238418579px;
+	color: #554d4d;
+}
+
+.message-content {
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 15.85px;
+	letter-spacing: 0.6000000238418579px;
+	color: #554d4d;
+}
+
+.message-actions {
+	display: flex;
+	gap: 1rem;
+	width: fit-content;
+}
+
+.message-actions button {
+	cursor: pointer;
+	/* width: 100%; */
+	height: fit-content;
+	padding: 10px 16px;
+	background-color: transparent;
+	border-radius: 4px;
+}
+
+.message-actions button:first-child {
+	border: 1px solid #222020;
+	color: #222020;
+	text-transform: uppercase;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 15.85px;
+	letter-spacing: 1px;
+}
+
+.message-actions button:first-child:hover {
+	background-color: #222020;
+	color: #fff;
+}
+
+.message-actions button:nth-child(2) {
+	border: 1px solid #757575;
+	color: #757575;
+	text-transform: uppercase;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 15.85px;
+	letter-spacing: 1px;
+}
+
+.message-actions button:nth-child(2):hover {
+	background-color: #f2f2f2;
+	color: #222020;
+}
+
+.filter-icon {
+	display: flex;
+	justify-content: end;
+	align-items: center;
 }
 
 .notification-bar {
@@ -320,11 +476,6 @@ body {
 }
 
 @media (max-width: 640px) {
-	.topbar {
-		position: relative;
-		top: auto;
-	}
-
 	.sidebar {
 		transform: translateX(-100%);
 		top: 0;
@@ -342,7 +493,6 @@ body {
 	.dashboard {
 		margin-left: 0;
 		padding: 1rem;
-		margin-top: 0;
 	}
 
 	.dashboard.expanded {
@@ -351,5 +501,26 @@ body {
 
 	.toggle-button {
 		display: none;
+	}
+
+	.message-actions {
+		flex-wrap: wrap;
+	}
+
+	.message-actions button {
+		width: 100%;
+	}
+}
+
+@media (max-width: 991.98px) {
+	.message-content-container {
+		flex-direction: column;
+	}
+	.message-actions {
+		flex-wrap: wrap;
+	}
+
+	.message-actions button {
+		width: 100%;
 	}
 }
